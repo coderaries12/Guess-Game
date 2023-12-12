@@ -12,9 +12,10 @@ export default function Landing() {
       </main>
       <footer className="flex justify-between p-2">
         <span>
-          <a href="">Julian</a> and <a href="">Sheema</a>
+          <a href="https://github.com/CastillejaCode">Julian</a> and{" "}
+          <a href="https://github.com/coderaries12">Sheema</a>
         </span>
-        <a href="">github</a>
+        <a href="https://github.com/coderaries12/Guess-Game">github</a>
       </footer>
     </div>
   );
