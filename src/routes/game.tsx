@@ -70,7 +70,7 @@ export default function Game() {
               <div className="modal-action"></div>
               <div className="flex justify-between gap-2">
                 <button className="btn bg-green-500" onClick={resetGame}>
-                  Try again?
+                  Play again?
                 </button>
                 <Link to="/" className="btn bg-yellow-500" onClick={resetGame}>
                   Exit
@@ -87,7 +87,7 @@ export default function Game() {
               <div className="modal-action"></div>
               <div className="flex justify-center gap-2">
                 <button className="btn bg-green-500" onClick={resetGame}>
-                  Try again?
+                  Play again?
                 </button>
                 <Link to="/" className="btn bg-yellow-500" onClick={resetGame}>
                   Exit
