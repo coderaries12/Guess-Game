@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Guess-Game
+Test your Christmas knowledge and try to guess the hidden word!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+This is a christmas-themed version of a word-guessing game. 
 
-Currently, two official plugins are available:
+<div>
+<img src="https://i.imgur.com/kp9e6vn.png" width=500>
+<img src="https://i.imgur.com/ZEdgvP6.png" width=200>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Use
+1. You will try to guess a hidden word. You are initially given 3 related words.
+2. You have 3 attempts to guess the word. You may reveal 3 clues to help you.
+3. Win and do a dance! 🥳
 
-## Expanding the ESLint configuration
+## Installation
+1. Install dependencies
+  ```
+  npm i
+  ```
+2. Run local dev server
+  ```
+  npm run dev
+  ```
+## Built With
+- React
+- Typescript
+- Tailwind
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Learning Outcomes
+- Use github collaboratively
+- Work in a team environment
+- Use github projects for task delegation
+- Better understanding of typescript
+- Work under time constraint
