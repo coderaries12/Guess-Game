@@ -5,5 +5,10 @@ export default {
     extend: {},
   },
 
+  // eslint-disable-next-line
   plugins: [require("daisyui")],
+
+  daisyui: {
+    themes: ["light"],
+  },
 };
