@@ -98,31 +98,31 @@ export default function Game() {
         </div>
       </dialog>
       <div className="flex w-full flex-1 flex-col items-center justify-between p-8">
-        <h1 className="text-center text-5xl">Round: {round + 1}/3</h1>
+        <h1 className="text-center text-5xl">Attempts: {round + 1}/3</h1>
         <div className="flex flex-col gap-12">
           <div className="flex w-full flex-col gap-2 text-center">
-            <h2 className=" text-3xl underline">Buzzwords</h2>
-            <p className="text-xl">{card.buzzwords.join(" - ")}</p>
+            <h2 className=" text-3xl underline font-['Berkshire_Swash']">Buzzwords</h2>
+            <p className="text-2xl text-orange-700">{card.buzzwords.join(" - ")}</p>
           </div>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col items-center gap-4"
           >
-            <label className="flex flex-col items-center gap-2 text-3xl font-bold">
+            <label className="flex flex-col items-center gap-2 text-3xl font-bold font-['Berkshire_Swash'] ">
               What am I?
               <input
                 className="input input-bordered"
-                placeholder="input your answer here"
+                placeholder="Input your answer here"
                 name="answer"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 required
               ></input>
             </label>
-            <button className="btn bg-green-500 text-xl">Submit</button>
+            <button className="btn btn-lg bg-teal-700 hover:bg-teal-900 font-['Berkshire_Swash'] text-center text-3xl text-cyan-50">Submit</button>
           </form>
           <div className="flex flex-col items-center gap-2">
-            <h3 className="flex flex-col items-center text-3xl ">Clues</h3>
+            <h3 className="flex flex-col items-center text-3xl font-['Berkshire_Swash'] ">Clues</h3>
             <div className="flex gap-2 text-xl">
               <button
                 onClick={handleLowerCount}
@@ -138,7 +138,7 @@ export default function Game() {
                 {"+"}
               </button>
             </div>
-            <p className="text-lg">
+            <p className="text-lg text-orange-700">
               {card.clues[count] ?? "Reveal a clue..."}{" "}
             </p>
           </div>
