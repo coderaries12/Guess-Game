@@ -1,4 +1,5 @@
 import { Modal } from "../Components/Modal";
+import Instructions from "../Components/Modal/Instructions/index";
 
 export default function Landing() {
   return (
@@ -10,7 +11,7 @@ export default function Landing() {
         <div className="flex flex-col gap-4">
           <button>Play</button>
           <Modal>
-            <span>Instructions</span>
+            <Instructions />
           </Modal>
         </div>
       </main>
