@@ -1,4 +1,5 @@
 import { Modal } from "../Components/Modal";
+import { Link } from "wouter";
 
 export default function Landing() {
   return (
@@ -8,7 +9,7 @@ export default function Landing() {
       </header>
       <main className="flex flex-1 flex-col items-center justify-center">
         <div className="flex flex-col gap-4">
-          <button>Play</button>
+          <Link to="/game">Play</Link>
           <Modal>
             <span>Instructions</span>
           </Modal>
