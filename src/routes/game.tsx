@@ -1,5 +1,5 @@
 import { SyntheticEvent, useRef, useState } from "react";
-import cards from "../Store";
+import cards from "../store";
 import Toast from "../Components/Toast";
 import { Link } from "wouter";
 
