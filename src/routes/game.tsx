@@ -9,10 +9,7 @@ export default function Game() {
         })}
       </div>
 
-      <div>
-        <h2>What am I?</h2>
-        <input className="input" placeholder="What am I?"></input>
-      </div>
+      <input className="input" placeholder="What am I?"></input>
 
       <div>
         {clues.map((e) => {
