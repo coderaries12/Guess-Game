@@ -5,7 +5,7 @@ import Toast from "../Components/Toast";
 const getRandomNumber = () => Math.floor(Math.random() * cards.length) + 1;
 
 export default function Game() {
-  const randomNumber = useRef(getRandomNumber());
+  const randomNumber = useRef<number>(getRandomNumber());
   const modalRef = useRef<HTMLDialogElement>(null);
   const [count, setCount] = useState(-1);
   const [round, setRound] = useState(0);
@@ -48,10 +48,32 @@ export default function Game() {
     setRound(round + 1);
   }
 
+  function resetGame() {
+    setCount(-1);
+    setRound(0);
+    setAnswer("");
+    randomNumber.current = getRandomNumber();
+    modalRef.current?.close();
+  }
+
   return (
     <>
-      <dialog ref={modalRef}>
-        {round === 2 ? <div>you lost</div> : <div>you won!</div>}
+      <dialog ref={modalRef} className="modal">
+        <div className="modal-box flex flex-col items-center text-center">
+          {round === 2 && (
+            <div className="text-xl">
+              <h1>You lost...</h1>
+              <h2>Better luck next time</h2>
+            </div>
+          )}
+          <div className="modal-action"></div>
+          <div className="flex gap-2">
+            <button className="btn bg-green-500" onClick={resetGame}>
+              Try again?
+            </button>
+            <button className="btn bg-yellow-500">Exit</button>
+          </div>
+        </div>
       </dialog>
       <div className="flex flex-1 flex-col items-center justify-between p-8">
         <h1 className="text-center text-5xl">Round: {round + 1}/3</h1>
