@@ -1,6 +1,7 @@
 import { SyntheticEvent, useRef, useState } from "react";
 import cards from "../Store";
 import Toast from "../Components/Toast";
+import { Link } from "wouter";
 
 const getRandomNumber = () => Math.floor(Math.random() * cards.length) + 1;
 
@@ -61,18 +62,39 @@ export default function Game() {
       <dialog ref={modalRef} className="modal">
         <div className="modal-box flex flex-col items-center text-center">
           {round === 2 && (
-            <div className="text-xl">
-              <h1>You lost...</h1>
-              <h2>Better luck next time</h2>
+            <div>
+              <div className="text-xl">
+                <h1>You lost...</h1>
+                <h2>Better luck next time</h2>
+              </div>
+              <div className="modal-action"></div>
+              <div className="flex justify-between gap-2">
+                <button className="btn bg-green-500" onClick={resetGame}>
+                  Try again?
+                </button>
+                <Link to="/" className="btn bg-yellow-500" onClick={resetGame}>
+                  Exit
+                </Link>
+              </div>
             </div>
           )}
-          <div className="modal-action"></div>
-          <div className="flex gap-2">
-            <button className="btn bg-green-500" onClick={resetGame}>
-              Try again?
-            </button>
-            <button className="btn bg-yellow-500">Exit</button>
-          </div>
+          {round !== 2 && (
+            <div>
+              <div className="text-xl">
+                <h1>You won!</h1>
+                <h2>Amazing work out there!</h2>
+              </div>
+              <div className="modal-action"></div>
+              <div className="flex justify-center gap-2">
+                <button className="btn bg-green-500" onClick={resetGame}>
+                  Try again?
+                </button>
+                <Link to="/" className="btn bg-yellow-500" onClick={resetGame}>
+                  Exit
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </dialog>
       <div className="flex flex-1 flex-col items-center justify-between p-8">
