@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Modal } from "../Components/Modal";
+import Instructions from "../Components/Modal/Instructions";
 
 export default function Landing() {
   return (
@@ -8,7 +9,7 @@ export default function Landing() {
         Play
       </Link>
       <Modal>
-        <span>Instructions</span>
+        <Instructions />
       </Modal>
     </div>
   );
