@@ -101,14 +101,18 @@ export default function Game() {
         <h1 className="text-center text-5xl">Attempts: {round + 1}/3</h1>
         <div className="flex flex-col gap-12">
           <div className="flex w-full flex-col gap-2 text-center">
-            <h2 className=" text-3xl underline font-['Berkshire_Swash']">Buzzwords</h2>
-            <p className="text-2xl text-orange-700">{card.buzzwords.join(" - ")}</p>
+            <h2 className=" font-['Berkshire_Swash'] text-3xl underline">
+              Buzzwords
+            </h2>
+            <p className="text-2xl text-orange-700">
+              {card.buzzwords.join(" - ")}
+            </p>
           </div>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col items-center gap-4"
           >
-            <label className="flex flex-col items-center gap-2 text-3xl font-bold font-['Berkshire_Swash'] ">
+            <label className="flex flex-col items-center gap-2 font-['Berkshire_Swash'] text-3xl font-bold ">
               What am I?
               <input
                 className="input input-bordered"
@@ -119,10 +123,14 @@ export default function Game() {
                 required
               ></input>
             </label>
-            <button className="btn btn-lg bg-teal-700 hover:bg-teal-900 font-['Berkshire_Swash'] text-center text-3xl text-cyan-50">Submit</button>
+            <button className="btn btn-lg bg-teal-700 text-center font-['Berkshire_Swash'] text-3xl text-cyan-50 hover:bg-teal-900">
+              Submit
+            </button>
           </form>
           <div className="flex flex-col items-center gap-2">
-            <h3 className="flex flex-col items-center text-3xl font-['Berkshire_Swash'] ">Clues</h3>
+            <h3 className="flex flex-col items-center font-['Berkshire_Swash'] text-3xl ">
+              Clues
+            </h3>
             <div className="flex gap-2 text-xl">
               <button
                 onClick={handleLowerCount}
@@ -143,6 +151,7 @@ export default function Game() {
             </p>
           </div>
         </div>
+        {/* Acts as the third element to center middle elementr */}
         <div></div>
       </div>
       {toast && <Toast message={toast} />}
