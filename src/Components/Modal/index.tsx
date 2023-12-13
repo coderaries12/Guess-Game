@@ -1,6 +1,5 @@
 import { useRef } from "react";
 
-
 interface Props {
   children: React.ReactNode;
 }
@@ -9,8 +8,11 @@ function Modal({ children }: Props) {
   const modalRef = useRef<HTMLDialogElement>(null);
   return (
     <>
-      <button className="btn" onClick={() => modalRef.current?.showModal()}>
-        instructions
+      <button
+        className="btn btn-lg bg-green-400 text-2xl"
+        onClick={() => modalRef.current?.showModal()}
+      >
+        Instructions
       </button>
       <dialog className="modal" ref={modalRef}>
         <div className="modal-box p-4 text-center">
