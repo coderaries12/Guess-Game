@@ -1,30 +1,22 @@
+
 import { useRef, useState } from "react";
 import cards from "../Store";
 
+const getRandomNumber = () => Math.floor(Math.random() * cards.length) + 1;
+
 export default function Game() {
-  const getRandom = () => Math.floor(Math.random() * cards.length) + 1;
-  const randomNumber = useRef(getRandom());
+  const randomNumber = useRef(getRandomNumber());
+  const modalRef = useRef<HTMLDialogElement>(null)
   const [count, setCount] = useState(-1);
   const [warning, setWarning] = useState(false);
+  const [round, setRound] = useState(0);
+  const [answer, setAnswer] = useState("")
+  
   const card = cards[randomNumber.current];
 
-  function getRandomBuzz() {
-    const randomIndex = Math.floor(Math.random() * cards.length) + 1;
-    return cards[randomIndex];
-  }
-
-  function randomClues() {
-    if (count > 1) return;
-    setCount(count + 1);
-    let clue1 = randomObject.clues[count];
-    return { clue1 };
-  }
-  //   const randomObject = getRandomBuzz();
-  //console.log("json object", randomObject)
-  //   const buzzwords = ["buzz", "buzz", "buzz"];
-  //   const clues = ["clue1", "clue2", "clue3"];
 
   function handleAddCount() {
+    // If limit reached stop and show warning 
     if (count > 1) {
       setWarning(true);
       return;
@@ -37,8 +29,32 @@ export default function Game() {
     setCount(count - 1);
   }
 
+  function handleSubmit (e: Event) {
+    e.preventDefault();
+    if (round == 2) {
+      modalRef.current?.showModal();
+      return;
+  }
+  const regex = new RegExp(`${card.keyword}`, 'gi')
+  if (regex.test(answer)) {
+    modalRef.current?.showModal();
+  }
+  else {
+    setAnswer('')
+    console.log(`you are wrong, you have ${2-round} rounds left`)
+  }
+  setRound(round + 1)
+  }
+
   return (
     <>
+    <dialog ref={modalRef}>
+    {round === 2 ? <div>
+      you lost
+      </div>: <div>you won!</div>}
+    </dialog>
+    <div>
+      <p>Round: {round + 1}</p>
       <div>
         {card.buzzwords.map((e, i) => {
           return (
@@ -48,7 +64,11 @@ export default function Game() {
           );
         })}
       </div>
-      <input className="input" placeholder="What am I?"></input>
+      <form onSubmit={handleSubmit}>
+      <input className="input" placeholder="What am I?" name="answer" value={answer} onChange={(e)=>setAnswer(e.target.value)} required></input>
+      <button>Submit</button>
+      </form>
+
 
       <div>
         <button onClick={handleLowerCount}>left</button>
@@ -57,42 +77,9 @@ export default function Game() {
       </div>
 
       <p>{card.clues[count] ?? "pick a clue"}</p>
-      {warning && <p>Warning! One more turn!</p>}
+      {warning && <p>All clues used!</p>}
+    </div>
 
-      {/* 
-      <div>
-        <div>Clues:{count}</div>
-        <div>
-          <button
-            style={{ border: "solid red", marginRight: "2rem" }}
-            onClick={randomClues}
-          >
-            Clue 1
-          </button>
-        </div>
-
-        <button style={{ border: "solid red", marginRight: "2rem" }}>
-          Clue 2
-        </button>
-        <button
-          style={{ border: "solid red", marginRight: "2rem" }}
-          onClick={randomClues}
-        >
-          Clue 3
-        </button>
-      </div> */}
-
-      {/* <button onclick={() => setCount(++count)}>Use Clue</button>
-      <p id="clueCounter">Clue Counter: {count}</p>
-      
-      {console.log("json object",randomObject.clues)}
-      {console.log("count",count)}
-      <div>{randomObject.clues[count]}</div> */}
-      {/* <div>
-        {randomObject.clues.map((e) => {
-          return <p>{e}</p>;
-        })}
-      </div> */}
     </>
   );
 }
