@@ -1,3 +1,4 @@
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Modal } from "../Components/Modal";
 import { Link } from "wouter";
@@ -14,13 +15,7 @@ export default function Landing() {
           </Modal>
         </div>
       </main>
-      <footer className="flex justify-between p-2">
-        <span>
-          <a href="https://github.com/CastillejaCode">Julian</a> and{" "}
-          <a href="https://github.com/coderaries12">Sheema</a>
-        </span>
-        <a href="https://github.com/coderaries12/Guess-Game">github</a>
-      </footer>
+      <Footer />
     </div>
   );
 }
