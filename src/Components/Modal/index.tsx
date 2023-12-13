@@ -17,7 +17,6 @@ function Modal({ children }: Props) {
       <dialog className="modal" ref={modalRef}>
         <div className="modal-box flex w-fit flex-col items-center px-12 py-8">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
