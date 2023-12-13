@@ -65,7 +65,7 @@ export default function Game() {
             <div>
               <div className="text-xl">
                 <h1>You lost...</h1>
-                <h2>Better luck next time</h2>
+                <h2>Better luck next time!</h2>
               </div>
               <div className="modal-action"></div>
               <div className="flex justify-between gap-2">
