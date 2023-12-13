@@ -63,7 +63,7 @@ export default function Game() {
         <div className="modal-box flex flex-col items-center text-center">
           {round === 2 && (
             <div>
-              <div className="text-xl">
+              <div className="text-xl font-['Berkshire_Swash'] text-orange-700 ">
                 <h1>You lost...</h1>
                 <h2>Better luck next time!</h2>
               </div>
@@ -80,7 +80,7 @@ export default function Game() {
           )}
           {round !== 2 && (
             <div>
-              <div className="text-xl">
+              <div className="text-xl font-['Berkshire_Swash'] text-orange-700">
                 <h1>You won!</h1>
                 <h2>Amazing work out there!</h2>
               </div>
