@@ -4,10 +4,10 @@ Test your Christmas knowledge and try to guess the hidden word!
 ## About
 This is a christmas-themed version of a word-guessing game. 
 
-<div>
-<img src="https://i.imgur.com/kp9e6vn.png" width=500>
-<img src="https://i.imgur.com/ZEdgvP6.png" width=200>
-</div>
+Desktop             |  Mobile
+:-------------------------:|:-------------------------:
+![desktop](https://i.imgur.com/kp9e6vn.png)  |  ![mobile](https://i.imgur.com/ZEdgvP6.png)
+
 
 ## How to Use
 1. You will try to guess a hidden word. You are initially given 3 related words.
