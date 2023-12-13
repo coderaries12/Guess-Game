@@ -102,15 +102,7 @@ export default function Game() {
         <div className="flex flex-col gap-12">
           <div className="flex w-full flex-col gap-2 text-center">
             <h2 className=" text-3xl underline">Buzzwords</h2>
-            <div className="flex w-full justify-between gap-2">
-              {card.buzzwords.map((e, i) => {
-                return (
-                  <p key={i} className="text-xl">
-                    {e}
-                  </p>
-                );
-              })}
-            </div>
+            <p className="text-xl">{card.buzzwords.join(" - ")}</p>
           </div>
           <form
             onSubmit={handleSubmit}
