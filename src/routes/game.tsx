@@ -97,18 +97,20 @@ export default function Game() {
           )}
         </div>
       </dialog>
-      <div className="flex flex-1 flex-col items-center justify-between p-8">
+      <div className="flex w-full flex-1 flex-col items-center justify-between p-8">
         <h1 className="text-center text-5xl">Round: {round + 1}/3</h1>
         <div className="flex flex-col gap-12">
-          <div className="flex flex-col gap-2 text-center">
+          <div className="flex w-full flex-col gap-2 text-center">
             <h2 className=" text-3xl underline">Buzzwords</h2>
-            {card.buzzwords.map((e, i) => {
-              return (
-                <p key={i} className="text-xl">
-                  {e}
-                </p>
-              );
-            })}
+            <div className="flex w-full justify-between gap-2">
+              {card.buzzwords.map((e, i) => {
+                return (
+                  <p key={i} className="text-xl">
+                    {e}
+                  </p>
+                );
+              })}
+            </div>
           </div>
           <form
             onSubmit={handleSubmit}
@@ -128,22 +130,20 @@ export default function Game() {
             <button className="btn bg-green-500 text-xl">Submit</button>
           </form>
           <div className="flex flex-col items-center gap-2">
-            <h3 className="flex flex-col items-center text-3xl  underline">
-              Clues
-            </h3>
+            <h3 className="flex flex-col items-center text-3xl ">Clues</h3>
             <div className="flex gap-2 text-xl">
               <button
                 onClick={handleLowerCount}
-                className={`${count === 0 && "invisible"}`}
+                className={`${count < 1 && "invisible"}`}
               >
-                {"<"}
+                {"-"}
               </button>
               <span>{count + 1}/3</span>
               <button
                 onClick={handleAddCount}
                 className={`${count === 2 && "invisible"}`}
               >
-                {">"}
+                {"+"}
               </button>
             </div>
             <p className="text-lg">
