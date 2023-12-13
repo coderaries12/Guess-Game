@@ -41,7 +41,7 @@ export default function Game() {
   }
   else {
     setAnswer('')
-    console.log(`you are wrong, you have ${2-round} rounds left`)
+    alert(`Ooops! Try again. ${2-round} more to go`)
   }
   setRound(round + 1)
   }
@@ -76,7 +76,7 @@ export default function Game() {
         <button onClick={handleAddCount}>right</button>
       </div>
 
-      <p>{card.clues[count] ?? "pick a clue"}</p>
+      <p>{card.clues[count] ?? "Pick a clue"}</p>
       {warning && <p>All clues used!</p>}
     </div>
 

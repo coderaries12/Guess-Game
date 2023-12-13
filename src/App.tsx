@@ -5,7 +5,7 @@ import Game from "./routes/game";
 import Landing from "./routes/landing";
 import { Route } from "wouter";
 
-const title = "guess";
+const title = "Christmas I Spy";
 
 function App() {
   return (
