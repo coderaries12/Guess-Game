@@ -2,19 +2,21 @@ export default function Footer() {
   return (
     <footer className="flex justify-between px-4 py-2">
       <span>
-        <a href="https://github.com/CastillejaCode" className="underline">
+        <a className="font-['Berkshire_Swash']">Made for Holidays 2023 by: </a>
+        <a href="https://github.com/CastillejaCode" target="_blank" rel="noreferrer" className="underline text-orange-500 font-['Berkshire_Swash']">
           Julian
         </a>{" "}
-        and{" "}
-        <a href="https://github.com/coderaries12" className="underline">
-          Sheema
+        <a className="font-['Berkshire_Swash']">and{" "}</a>
+        <a href="https://github.com/coderaries12" target="_blank" rel="noreferrer" className="underline text-orange-500 font-['Berkshire_Swash']">
+          Sheena
         </a>
       </span>
       <a
         href="https://github.com/coderaries12/Guess-Game"
-        className="underline"
+        target="_blank" rel="noreferrer"
+        className="underline font-['Berkshire_Swash'] "
       >
-        github
+        GitHub
       </a>
     </footer>
   );

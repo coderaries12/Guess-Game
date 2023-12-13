@@ -9,7 +9,7 @@ function Modal({ children }: Props) {
   return (
     <>
       <button
-        className="btn btn-lg bg-green-400 text-2xl"
+        className="btn btn-lg bg-teal-700 text-2xl text-cyan-50 font-['Berkshire_Swash']"
         onClick={() => modalRef.current?.showModal()}
       >
         Instructions
@@ -23,7 +23,7 @@ function Modal({ children }: Props) {
           </form>
           {children}
           <form method="dialog">
-            <button className="btn btn-lg mt-8 bg-green-500">Thanks!</button>
+            <button className="btn btn-lg mt-8 bg-teal-700 text-cyan-50 font-['Berkshire_Swash']">I'm Ready!</button>
           </form>
         </div>
         <form method="dialog" className="modal-backdrop">
