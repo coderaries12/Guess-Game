@@ -1,4 +1,4 @@
-import { Modal } from "../Components/Modal/Modal";
+import { Modal } from "../Components/Modal";
 
 export default function Landing() {
   return (

@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import "./Modal.css";
 
 interface Props {
   children: React.ReactNode;
