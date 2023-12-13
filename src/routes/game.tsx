@@ -1,5 +1,6 @@
 import { SyntheticEvent, useRef, useState } from "react";
 import cards from "../Store";
+import Toast from "../Components/Toast";
 
 const getRandomNumber = () => Math.floor(Math.random() * cards.length) + 1;
 
@@ -9,6 +10,14 @@ export default function Game() {
   const [count, setCount] = useState(-1);
   const [round, setRound] = useState(0);
   const [answer, setAnswer] = useState("");
+  const [toast, setToast] = useState("");
+
+  function createToast(message: string) {
+    setToast(message);
+    setTimeout(() => {
+      setToast("");
+    }, 3000);
+  }
 
   const card = cards[randomNumber.current];
 
@@ -32,7 +41,10 @@ export default function Game() {
     const regex = new RegExp(`${card.keyword}`, "gi");
     if (regex.test(answer)) {
       modalRef.current?.showModal();
-    } else setAnswer("");
+    } else {
+      createToast(`Wrong answer...`);
+      setAnswer("");
+    }
     setRound(round + 1);
   }
 
@@ -97,6 +109,7 @@ export default function Game() {
         </div>
         <div></div>
       </div>
+      {toast && <Toast message={toast} />}
     </>
   );
 }
