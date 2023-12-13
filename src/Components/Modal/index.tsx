@@ -15,7 +15,7 @@ function Modal({ children }: Props) {
         Instructions
       </button>
       <dialog className="modal" ref={modalRef}>
-        <div className="modal-box p-4 text-center">
+        <div className="modal-box flex w-fit flex-col items-center px-12 py-8">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -23,6 +23,9 @@ function Modal({ children }: Props) {
             </button>
           </form>
           {children}
+          <form method="dialog">
+            <button className="btn btn-lg mt-8 bg-green-500">Thanks!</button>
+          </form>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
